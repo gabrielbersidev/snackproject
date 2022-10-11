@@ -97,7 +97,8 @@ form {
 
   width: 100%;
   padding: 16px 0;
-  margin: 25px;
+  margin: 0px;
+  margin-top: 40px;
   border: none;
   border-radius: 8px;
   outline: none;
@@ -107,7 +108,7 @@ form {
   color: #2b134b;
   background: var(--secundary-green);
   cursor: pointer;
-  box-shadow: 0 10px 40px -12px #486ee5 50%;
+  box-shadow: 0 10px 40px #00000056;
 }
 
 @media only screen and (max-width: 950px) {
