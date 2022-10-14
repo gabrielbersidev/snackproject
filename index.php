@@ -1,5 +1,46 @@
+<?php
+include('conexao.php');
+
+if(isset($_POST['cpf']) || isset($_POST['senha'])) {
+
+   if(strlen($_POST['cpf']) == 0) {
+      
+   } else if(strlen($_POST['senha']) == 0) {
+      
+   } else {
+
+      $cpf = $mysqli->real_escape_string($_POST['cpf']);
+      $senha = $mysqli->real_escape_string($_POST['senha']);
+
+      $sql_code = "SELECT * FROM usuarios WHERE cpf = '$cpf' AND senha = '$senha'";
+      $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+
+      $quantidade = $sql_query->num_rows;
+
+      if($quantidade == 1) {
+
+         $usuario = $sql_query->fetch_assoc();
+
+
+         if(!isset($_SESSION)) {
+            session_start();
+         }
+
+         $_SESSION['id'] = $usuario['id'];
+         $_SESSION['nome'] = $usuario['nome'];
+
+         header("Location: painel.php");
+
+
+      } else {
+         die("Falha ao logar! CPF ou Senha incorretos.");
+      }
+   }
+
+}
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
