@@ -1,6 +1,101 @@
+:root {
+    --body-bg: radial-gradient(circle at 104.17% 95.45%, #b5a6fb 0, #8889f0 25%, #486ee5 50%, #0056da 75%, #0043cf 100%);
+    --card-bg: #1c54ff 50%;
+    --input-bg: #2e4eae 50%;
+    --primary-green: #FFF2E7;
+    --secundary-green: #fff2e7;
+  }
+
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: var(--body-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+.btns-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-1, .btn-2 {
+    background-color:#0043cf;
+    border: none;
+    color: #FFF2E7;
+    padding: 24px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-right: 2%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #00000056;
+  }
+
+.btn-1:hover{
+    opacity: 83%;
+}
+.btn-2:hover{
+    opacity: 83%;
+}
+
+article,
+aside {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+article > h1 {
+    font-size: 3vw;
+    color: var(--primary-green);
+}
+  
+article > img {
+    width: 35vw;
+}
+
+@media only screen and (max-width: 950px) {
+    .card-login {
+      width: 85%;
+    }
+  }
+  
+
+@media only screen and (max-width: 600px) {
+    body {
+      flex-direction: column;
+    }
+  
+    article > h1 {
+      display: none;
+    }
+  
+    article {
+      width: 100%;
+      height: auto;
+    }
+  
+    aside{
+       width: 100%;
+       height: auto;
+    }
+  
+    article > img {
+       width: 50vw;
+    }
+  
+    .btn-1, .btn-2{
+       width: 90%;
+    }
+  }
+
