@@ -116,7 +116,25 @@ form {
   cursor: pointer;
   box-shadow: 0 10px 40px #00000056;
 }
-
+.btn-register {
+  width: 100%;
+  margin: 0px;
+  margin-top: 15px;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 650;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: var(--secundary-green);
+  cursor: pointer;
+  box-shadow: 0 10px 40px #00000056;
+}
 @media only screen and (max-width: 950px) {
   .card-login {
     width: 85%;

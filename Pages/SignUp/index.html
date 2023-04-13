@@ -13,6 +13,8 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="/Pages/SignUp/Public/style.css" />
+    <!-- Script -->
+    <script src="/Pages/SignUp/Public/script.js"></script>
   </head>
 
   <body>
@@ -23,18 +25,21 @@
     <aside class="form">
       <div class="card-login">
         <h1>CADASTRO</h1>
-        <form action="" method="POST">
+        <p id="invalid" class="hidden">Este Email já está cadastrado.</p>
+        <form action="/signup" method="POST">
           <div class="textfield">
-            <label for="name">Nome completo</label>
+            <label for="fullname">Nome completo</label>
             <input
+              required
               type="name"
-              name="name"
+              name="fullname"
               placeholder="Digite seu nome completo"
             />
           </div>
           <div class="textfield">
             <label for="email">Email educacional</label>
             <input
+              required
               type="email"
               name="email"
               placeholder="Digite seu email educacional"
@@ -43,18 +48,16 @@
           <div class="textfield">
             <label for="password">Senha</label>
             <input
+              required
+              minlength="4"
               type="password"
               name="password"
               placeholder="Digite sua senha"
             />
           </div>
           <button class="btn-register" type="submit">Cadastre-se</button>
-          <button class="btn-login">
-            <a href="index.html" style="text-decoration: none; color: #2b134b"
-              >Login</a
-            >
-          </button>
         </form>
+        <a href="/login" class="btn-login">Voltar para o Login</a>
       </div>
     </aside>
   </body>

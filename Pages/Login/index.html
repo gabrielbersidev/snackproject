@@ -26,14 +26,21 @@
       <div class="card-login">
         <h1>LOGIN</h1>
         <p id="invalid" class="hidden">Email ou senha incorreto.</p>
-        <form action="/login" method="POST">
+        <form action="" method="POST">
           <div class="textfield">
-            <label for="email">EMAIL</label>
-            <input type="email" name="email" placeholder="Digite seu EMAIL" />
+            <label for="email">Email</label>
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Digite seu email educacional"
+            />
           </div>
           <div class="textfield">
             <label for="password">Senha</label>
             <input
+              required
+              minlength="4"
               type="password"
               name="password"
               placeholder="Digite sua senha"
@@ -41,6 +48,8 @@
           </div>
           <button class="btn-login" type="submit">Login</button>
         </form>
+
+        <a href="/signup" class="btn-register">Cadastre-se</a>
       </div>
     </aside>
   </body>
