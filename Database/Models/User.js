@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   lastUpdate: {
     type: Date,
-    default: Date.UTC(2005, 8, 19),
+    default: Date.UTC(2005, 7, 19),
   },
 });
 

@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const email = req.body.email;
   const fullname = req.body.fullname;
+  const email = req.body.email;
   const password = req.body.password;
 
   const user = await userActions.checkUserExistance({ email });
@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     res.redirect('/signup?invalid');
     return;
   } else {
+    await userActions.createUser(fullname, email, password);
     res.sendFile(path.join(__dirname, '../Pages/SignUpSuccess/index.html'));
   }
 });

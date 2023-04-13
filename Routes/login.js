@@ -10,12 +10,9 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const email = req.body.email;
-  const pass = req.body.password;
+  const password = req.body.password;
 
-  const user = await userActions.checkUserExistance({
-    email: email,
-    password: pass,
-  });
+  const user = await userActions.checkUserExistance({ email, password });
 
   if (user) {
     req.session.authenticated = true;

@@ -6,4 +6,10 @@ async function checkUserExistance(compareData) {
   return user;
 }
 
-module.exports = { checkUserExistance };
+async function createUser(fullname, email, password) {
+  const user = new User({ fullname, email, password });
+
+  await user.save();
+}
+
+module.exports = { checkUserExistance, createUser };
