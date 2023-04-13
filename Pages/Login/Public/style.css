@@ -168,3 +168,12 @@ form {
     width: 90%;
   }
 }
+
+p {
+  color: rgb(236, 187, 26);
+  margin: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}

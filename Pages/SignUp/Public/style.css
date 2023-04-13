@@ -174,3 +174,12 @@ form {
 .shake {
   animation: shake 0.5s;
 }
+
+p {
+  color: rgb(236, 187, 26);
+  margin: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}
