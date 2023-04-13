@@ -4,6 +4,7 @@ const session = require('express-session');
 
 const database = require('./Database/database');
 const loginRouter = require('./Routes/login');
+const signupRouter = require('./Routes/signup');
 const mainRouter = require('./Routes/main');
 
 database
@@ -21,12 +22,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Arquivos públicos
 app.use('/Pages/Login/Public', express.static('Pages/Login/Public'));
+app.use('/Pages/SignUp/Public', express.static('Pages/SignUp/Public'));
 app.use('/Pages/Main/Public', express.static('Pages/Main/Public'));
 app.use('/Pages/img', express.static('Pages/img'));
 
 // Definição de Rotas
 app.get('/', (req, res) => res.redirect('/main'));
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 app.use('/main', mainRouter);
 
 function startServer() {

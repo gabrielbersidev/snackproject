@@ -1,8 +1,15 @@
 :root {
-  --body-bg: radial-gradient(circle at 104.17% 95.45%, #b5a6fb 0, #8889f0 25%, #486ee5 50%, #0056da 75%, #0043cf 100%);
+  --body-bg: radial-gradient(
+    circle at 104.17% 95.45%,
+    #b5a6fb 0,
+    #8889f0 25%,
+    #486ee5 50%,
+    #0056da 75%,
+    #0043cf 100%
+  );
   --card-bg: #1c54ff 50%;
   --input-bg: #2e4eae 50%;
-  --primary-green: #FFF2E7;
+  --primary-green: #fff2e7;
   --secundary-green: #fff2e7;
 }
 
@@ -10,7 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -111,16 +118,18 @@ form {
 }
 
 .btn-login {
-
   width: 100%;
-  padding: 8px 0;
   margin: 0px;
   margin-top: 15px;
+  padding: 8px;
+  text-decoration: none;
+  text-align: center;
   border: none;
   border-radius: 8px;
   outline: none;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 650;
+  font-size: 14px;
   letter-spacing: 3px;
   color: #2b134b;
   background: var(--secundary-green);
@@ -148,22 +157,20 @@ form {
     height: auto;
   }
 
-  aside{
-     width: 100%;
-     height: auto;
+  aside {
+    width: 100%;
+    height: auto;
   }
 
   article > img {
-     width: 50vw;
+    width: 50vw;
   }
 
-  .card-login{
-     width: 90%;
+  .card-login {
+    width: 90%;
   }
 }
-
 
 .shake {
   animation: shake 0.5s;
 }
-
