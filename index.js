@@ -6,6 +6,7 @@ const database = require('./Database/database');
 const loginRouter = require('./Routes/login');
 const signupRouter = require('./Routes/signup');
 const mainRouter = require('./Routes/main');
+const usernameRouter = require('./Routes/username');
 
 database
   .start()
@@ -31,6 +32,7 @@ app.get('/', (req, res) => res.redirect('/main'));
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/main', mainRouter);
+app.use('/username', usernameRouter);
 
 function startServer() {
   app.listen(port, () => {
