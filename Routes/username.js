@@ -1,14 +1,10 @@
 const express = require('express');
+const checkAuthenticated = require('../checkAuthenticated');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  if (req.session.authenticated == true) {
-    res.status(200).send(req.session.fullname);
-    return;
-  }
-
-  res.sendStatus(404);
+router.get('/', checkAuthenticated, (req, res) => {
+  res.status(200).send(req.session.fullname);
 });
 
 module.exports = router;

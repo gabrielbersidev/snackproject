@@ -4,7 +4,8 @@ function getUsername() {
   const request = new XMLHttpRequest();
   request.open('GET', url);
   request.addEventListener('load', function () {
-    document.getElementById('username').innerHTML = this.responseText;
+    if (this.status == 200)
+      document.getElementById('username').innerHTML = this.responseText;
   });
   request.send();
 }

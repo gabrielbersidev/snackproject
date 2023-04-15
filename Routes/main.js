@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const checkAuthenticated = require('../Helpers/checkAuthenticated');
+const checkAuthenticated = require('../checkAuthenticated');
 
 const router = express.Router();
 
