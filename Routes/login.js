@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const userActions = require('../Helpers/userActions');
+const userController = require('../Controllers/userController');
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  const user = await userActions.checkUserExistance({ email, password });
+  const user = await userController.checkUserExistance({ email, password });
 
   if (user) {
     req.session.authenticated = true;

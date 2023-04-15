@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const userActions = require('../Helpers/userActions');
+const userController = require('../Controllers/userController');
 
 const router = express.Router();
 
@@ -13,13 +13,13 @@ router.post('/', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  const user = await userActions.checkUserExistance({ email });
+  const user = await userController.checkUserExistance({ email });
 
   if (user) {
     res.redirect('/signup?invalid');
     return;
   } else {
-    await userActions.createUser(fullname, email, password);
+    await userController.createUser(fullname, email, password);
     res.sendFile(path.join(__dirname, '../Pages/SignUpSuccess/index.html'));
   }
 });
