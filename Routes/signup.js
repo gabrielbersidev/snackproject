@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const userController = require('../Controllers/userController');
 
-const router = express.Router();
+const Router = express.Router();
 
-router.get('/', (req, res) => {
+Router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../Pages/SignUp/index.html'));
 });
 
-router.post('/', async (req, res) => {
+Router.post('/', async (req, res) => {
   const fullname = req.body.fullname;
   const email = req.body.email;
   const password = req.body.password;
@@ -24,4 +24,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = Router;

@@ -6,4 +6,10 @@ async function addMenu(menu, period) {
   await menuObj.save();
 }
 
-module.exports = { addMenu };
+async function getMenu(compareData) {
+  const menuObj = await Menu.find(compareData);
+
+  return menuObj;
+}
+
+module.exports = { addMenu, getMenu };

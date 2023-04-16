@@ -2,13 +2,13 @@ const path = require('path');
 const express = require('express');
 const userController = require('../Controllers/userController');
 
-const router = express.Router();
+const Router = express.Router();
 
-router.get('/', (req, res) => {
+Router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../Pages/Login/index.html'));
 });
 
-router.post('/', async (req, res) => {
+Router.post('/', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
@@ -17,8 +17,9 @@ router.post('/', async (req, res) => {
   if (user) {
     req.session.authenticated = true;
     req.session.fullname = user.fullname;
+    req.session.email = user.email;
     res.redirect('/main');
   } else res.redirect('/login?invalid');
 });
 
-module.exports = router;
+module.exports = Router;

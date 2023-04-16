@@ -7,7 +7,8 @@ const loginRouter = require('./Routes/login');
 const signupRouter = require('./Routes/signup');
 const mainRouter = require('./Routes/main');
 const usernameRouter = require('./Routes/username');
-const menuController = require('./Controllers/menuController');
+const menuRouter = require('./Routes/menu');
+const logoutRouter = require('./Routes/logout');
 
 database
   .start()
@@ -31,14 +32,14 @@ app.use('/Pages/img', express.static('Pages/img'));
 // Definição de Rotas
 app.get('/', (req, res) => res.redirect('/main'));
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
 app.use('/main', mainRouter);
 app.use('/username', usernameRouter);
+app.use('/menu', menuRouter);
 
 function startServer() {
   app.listen(port, () => {
     console.log('Server is Listening!');
   });
-
-  menuController.addMenu('Pão com mortadela, suco de abacaxi e banana', false);
 }
