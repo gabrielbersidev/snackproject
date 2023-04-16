@@ -7,6 +7,7 @@ const loginRouter = require('./Routes/login');
 const signupRouter = require('./Routes/signup');
 const mainRouter = require('./Routes/main');
 const usernameRouter = require('./Routes/username');
+const menuController = require('./Controllers/menuController');
 
 database
   .start()
@@ -38,4 +39,6 @@ function startServer() {
   app.listen(port, () => {
     console.log('Server is Listening!');
   });
+
+  menuController.addMenu('Pão com mortadela, suco de abacaxi e banana', false);
 }
